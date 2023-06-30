@@ -39,6 +39,23 @@ function ClimaScreen() {
             </View>
         );
     }
+
+    return (
+        <View>
+            {climaData.map((clima, index) => (
+                <View key={index}>
+                    <Text>
+                        Ubicacion: {clima.location.name}, {clima.location.region},{' '}
+                        {clima.location.country}
+                    </Text>
+                    <Text>Temperatura: {clima.current.temp_c} °C</Text>
+                    <Text> {clima.current.icon} </Text>
+                    <Text>Condicion: {clima.current.condition.text}</Text>
+                    <Text>--------------------------------------------</Text>
+                </View>
+            ))}
+        </View>
+    );
 }
 
 export default ClimaScreen;
